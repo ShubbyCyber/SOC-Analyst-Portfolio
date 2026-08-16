@@ -9,4 +9,9 @@ Welcome to my defensive security portfolio. Here, I will document my hands-on SO
 
 
 ## 📁 Projects
-*(Projects will be added here as they are completed)*
+### 1. Wazuh SIEM & Windows Telemetry Home Lab (In Progress)
+* **Goal:** Build a dedicated SOC lab to ingest, analyze, and detect endpoint threat activity using Wazuh SIEM.
+* **Current Progress:** 
+  * Configured Oracle VirtualBox environment and successfully booted the Wazuh v4.14.7 OVA server.
+  * Solved hypervisor resource allocation limits and configured NAT port forwarding for dashboard access.
+  * Initiated fresh target Windows VM installation.

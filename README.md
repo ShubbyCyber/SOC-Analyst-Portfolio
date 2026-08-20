@@ -59,7 +59,8 @@ Individual failed authentication attempts triggered baseline syslog alerts:
 * **Severity:** Level 5
 * **MITRE ATT&CK Mapping:** T1110.001 (Password Guessing)
 
-![Dashboard Level 5 Baseline](Dashboard%20Level%205%20Baseline.png)
+<img width="1920" height="1080" alt="Dashboard  Level 5 Baseline" src="https://github.com/user-attachments/assets/505b83de-fd02-4099-aed7-66bd97fcc768" />
+
 
 ### 3. Correlation & Escalation
 Executing sequential authentication attempts crossed the correlation threshold, triggering composite rules:
@@ -67,7 +68,8 @@ Executing sequential authentication attempts crossed the correlation threshold, 
 * **Rule ID 5750:** `Maximum authentication attempts exceeded`
 * **MITRE ATT&CK Mapping:** T1110 (Brute Force)
 
-![Dashboard Level 10 Escalation](Dashboard%20Level%2010%20Escalation.png)
+<img width="1920" height="1080" alt="Dashboard  Level 10 Escalation" src="https://github.com/user-attachments/assets/71303ddf-3172-4032-aba6-b866c493a942" />
+
 
 ## Key Takeaways
 * Individual login failures generate low-severity noise, but SIEM correlation rules escalate sequential patterns into actionable high-priority alerts.

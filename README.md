@@ -1,4 +1,4 @@
-# SOC Analyst Portfolio
+# Shubby Cyber | SOC Analyst Portfolio
 
 Welcome to my defensive security portfolio. Here, I will document my hands-on SOC lab writeups, SIEM detection rules, incident response reports, and threat analysis playbooks as I complete them.
 

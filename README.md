@@ -35,7 +35,8 @@ Welcome to my defensive security portfolio. Here, I will document my hands-on SO
 * ⏳ Deploying Windows 10 target endpoint (`Win10-Target`) to configure Sysmon and Windows Event Log forwarding.
 * My windows 10 has failed to install but I will continue to work with what I have.
 
-* # SSH Brute-Force Simulation & SIEM Alert Escalation
+# SSH Brute-Force Simulation & SIEM Alert Escalation
+
 ## Project Overview
 Simulated an SSH brute-force attack against an Ubuntu target (`csec-target`) to analyze authentication logging, Wazuh decoder behavior, and high-severity correlation escalation.
 
@@ -49,6 +50,7 @@ Simulated an SSH brute-force attack against an Ubuntu target (`csec-target`) to 
 
 ### 1. Attack Simulation
 Generated failed SSH authentication attempts using Hydra against `127.0.0.1` with a custom wordlist.
+
 ![Terminal Attack Execution](images/Terminal%20and%20Attack%20Execution.jpeg)
 
 ### 2. Telemetry Capture & Low-Severity Detection
@@ -56,16 +58,16 @@ Individual failed authentication attempts triggered baseline syslog alerts:
 * **Rule ID 5710:** `sshd: Attempt to login using a non-existent user`
 * **Severity:** Level 5
 * **MITRE ATT&CK Mapping:** T1110.001 (Password Guessing)
-![Dashboard Level 5 Baseline](images/Dashboard%20%20Level%205%20Baseline.jpg)
 
+![Dashboard Level 5 Baseline](images/Dashboard%20%20Level%205%20Baseline.jpg)
 
 ### 3. Correlation & Escalation
 Executing sequential authentication attempts crossed the correlation threshold, triggering composite rules:
 * **Rule ID 2502:** `syslog: User missed the password more than one time` (Severity Level 10)
 * **Rule ID 5750:** `Maximum authentication attempts exceeded`
 * **MITRE ATT&CK Mapping:** T1110 (Brute Force)
-![Dashboard Level 10 Escalation](images/Dashboard%20%20Level%2010%20Escalation.jpg)
 
+![Dashboard Level 10 Escalation](images/Dashboard%20%20Level%2010%20Escalation.jpg)
 
 ## Key Takeaways
 * Individual login failures generate low-severity noise, but SIEM correlation rules escalate sequential patterns into actionable high-priority alerts.

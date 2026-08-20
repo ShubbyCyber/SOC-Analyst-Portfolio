@@ -51,7 +51,7 @@ Simulated an SSH brute-force attack against an Ubuntu target (`csec-target`) to 
 ### 1. Attack Simulation
 Generated failed SSH authentication attempts using Hydra against `127.0.0.1` with a custom wordlist.
 
-![Terminal Attack Execution](images/Terminal%20and%20Attack%20Execution.jpeg)
+![Terminal Attack Execution](Terminal%20and%20Attack%20Execution.jpeg)
 
 ### 2. Telemetry Capture & Low-Severity Detection
 Individual failed authentication attempts triggered baseline syslog alerts:
@@ -59,7 +59,7 @@ Individual failed authentication attempts triggered baseline syslog alerts:
 * **Severity:** Level 5
 * **MITRE ATT&CK Mapping:** T1110.001 (Password Guessing)
 
-![Dashboard Level 5 Baseline](images/Dashboard%20%20Level%205%20Baseline.jpg)
+![Dashboard Level 5 Baseline](Dashboard%20Level%205%20Baseline.png)
 
 ### 3. Correlation & Escalation
 Executing sequential authentication attempts crossed the correlation threshold, triggering composite rules:
@@ -67,7 +67,7 @@ Executing sequential authentication attempts crossed the correlation threshold, 
 * **Rule ID 5750:** `Maximum authentication attempts exceeded`
 * **MITRE ATT&CK Mapping:** T1110 (Brute Force)
 
-![Dashboard Level 10 Escalation](images/Dashboard%20%20Level%2010%20Escalation.jpg)
+![Dashboard Level 10 Escalation](Dashboard%20Level%2010%20Escalation.png)
 
 ## Key Takeaways
 * Individual login failures generate low-severity noise, but SIEM correlation rules escalate sequential patterns into actionable high-priority alerts.

@@ -74,3 +74,25 @@ Executing sequential authentication attempts crossed the correlation threshold, 
 ## Key Takeaways
 * Individual login failures generate low-severity noise, but SIEM correlation rules escalate sequential patterns into actionable high-priority alerts.
 * Telemetry correctly tags compliance mappings across NIST 800-53 (AU.14, AC.7) and PCI-DSS (10.2.4, 10.2.5).
+
+## Day 5: Log Analysis & Telemetry Artifact Extraction
+
+### Overview
+Deep-dive log analysis of SSH brute-force telemetry ingested from `csec-target` (Ubuntu) into the Wazuh SIEM. Verified field parsing, threat taxonomy, and framework mapping across generated authentication events.
+
+### Key Analysis & Findings
+* **Event Parsing & Decoders:** Standard syslog events from `/var/log/auth.log` were successfully parsed via the `sshd` decoder, populating structured fields (`data.srcip`, `data.srcuser`, `decoder.name`).
+* **Correlation Thresholds:** Sequential authentication failures escalated alert levels dynamically:
+  * **Rule ID 5710 (Level 5):** Individual failed SSH login attempts targeting nonexistent users.
+  * **Rule ID 2502 (Level 10):** Threshold breach triggered by repeated authentication failures (`PAM 5 more authentication failures`).
+* **Framework Alignment:** Correlated alerts automatically mapped to **MITRE ATT&CK T1110** (Brute Force / Credential Access) alongside regulatory controls (**NIST 800-53 AU.14/AC.7** and **PCI-DSS 10.2.4/10.2.5**).
+
+### Visual Evidence
+<img width="1920" height="1080" alt="Log Analysis 1" src="https://github.com/user-attachments/assets/e6493258-6e20-4f20-83b2-51c54b8707b1" />
+
+*Figure 1: Expanded JSON view showing raw syslog string, agent IP (10.0.2.15), and decoded fields.*
+
+<img width="1920" height="1080" alt="Log Analysis 2" src="https://github.com/user-attachments/assets/e164ad2e-a710-437b-8459-9ff00fb426b9" />
+<img width="1920" height="1080" alt="Log Analysis 3" src="https://github.com/user-attachments/assets/0a265752-b85e-4c6f-9138-0ebb69a55586" />
+
+*Figure 2: Correlated Level 10 alert mapped to MITRE ATT&CK Technique T1110.*<img width="1920" height="1080" alt="Log Analysis 1" src="https://github.com/user-attachments/assets/1e8450fc-33f1-40ff-a1fb-75239ebe0d43" />

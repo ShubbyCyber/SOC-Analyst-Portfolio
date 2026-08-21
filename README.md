@@ -95,4 +95,4 @@ Deep-dive log analysis of SSH brute-force telemetry ingested from `csec-target` 
 <img width="1920" height="1080" alt="Log Analysis 2" src="https://github.com/user-attachments/assets/e164ad2e-a710-437b-8459-9ff00fb426b9" />
 <img width="1920" height="1080" alt="Log Analysis 3" src="https://github.com/user-attachments/assets/0a265752-b85e-4c6f-9138-0ebb69a55586" />
 
-*Figure 2: Correlated Level 10 alert mapped to MITRE ATT&CK Technique T1110.*<img width="1920" height="1080" alt="Log Analysis 1" src="https://github.com/user-attachments/assets/1e8450fc-33f1-40ff-a1fb-75239ebe0d43" />
+*Figure 2: Correlated Level 10 alert mapped to MITRE ATT&CK Technique T1110.*
